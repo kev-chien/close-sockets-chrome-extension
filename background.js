@@ -56,6 +56,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
         });
         chrome.tabs.remove(createdTab.id);
         chrome.tabs.update(currentTab.id, { selected: true });
+        chrome.tabs.reload(currentTab.id);
       })
       .catch(function (error) {
         console.error(error);
